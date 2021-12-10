@@ -1,6 +1,6 @@
 ## Inleiding tot de usecase
 
-Een agent wordt getraind om obstakels te vermijden en om rewards op te maken door middel van te springen.
+Een agent wordt getraind om obstakels te vermijden en om rewards te vangen door middel van te springen. Als hij deze niet vangt of vermijd zal hij ook strafpunten krijgen. Obstakels en rewards zijn blokjes die op de agent afkomen. De scene staat in "Assets/JumperExtended" en het NN model staat in "Assets/LearningJumperExtented/results/pb_02".
 
 ## Observaties, acties en beloning
 
@@ -16,7 +16,7 @@ Wij hebben in dit geval maar 1 actie die de agent kan uitvoeren om zoveel mogeli
 
 Het beloningsmechanisme vertelt het leeralgoritme of de voorgestelde actie de agent dichter bij het einddoel van de leeroefening brengt of niet.
 
-We geven onze agent een beloning van +0.75 als deze een reward pakt en een straf van -1 als deze een obstakel aanraakt. Ook als deze geen reward pakt dan zal deze een reward krijgen van +1 en als de agent een reward mist zal deze een straf krijgen van -0.75.
+We geven onze agent een beloning van +0.75 als deze een reward pakt en een straf van -1 als deze een obstakel aanraakt. Ook als deze geen obstakel aanraakt dan zal deze een reward krijgen van +1 en als de agent een reward mist zal deze een straf krijgen van -0.75.
 
 Verder krijgt onze agent een afstraffing van -0.1 als deze springt om te vermijden dat deze heel de tijd springt.
 
@@ -327,3 +327,7 @@ public class JumperAgent : Agent
 }
 ```
 Hierin wordt het duidelijk dat de agent kan springen als actie en als deze met bepaalde objecten colliden zullen er punten afgetrokken of vrijgegeven worden. Ook hier wordt het duidelijk dat de agent enkel kan springen als deze op de grond staat.
+
+## Resultaten en conclusie
+We hebben 2 verschillende trainingssessies gedaan en bij beide sessies sprong de agent te vaak ookal was er geen obstakel of reward in de buurt, dit hebben we niet opgelost gekregen.
+
